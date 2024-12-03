@@ -9,7 +9,7 @@ const ProgressBar = ({ currentStep }: { currentStep: number }) => {
           width: "100%",
           backgroundColor: "#e0e0e0",
           borderRadius: "10px",
-          overflow: "hidden",
+          //   overflow: "hidden",
         }}
       >
         <div

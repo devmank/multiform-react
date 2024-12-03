@@ -24,7 +24,7 @@ const Step2 = ({
   const [selectedCountry, setSelectedCountry] = useState(
     state.location.country
   );
-
+  const [loadingCities, setLoadingCities] = useState(false);
   useEffect(() => {
     const fetchCountries = async () => {
       try {
@@ -44,6 +44,7 @@ const Step2 = ({
   }, []);
 
   const fetchCities = async (country: string) => {
+    setLoadingCities(true); // Start loading
     try {
       const response = await axios.post(
         `https://countriesnow.space/api/v0.1/countries/cities`,
@@ -53,6 +54,8 @@ const Step2 = ({
       setCities(cityList);
     } catch (error) {
       console.error("Error fetching cities:", error);
+    } finally {
+      setLoadingCities(false); // Stop loading
     }
   };
 
@@ -92,24 +95,28 @@ const Step2 = ({
       {selectedCountry && (
         <div className="form-group">
           <label htmlFor="city">Select City</label>
-          <select
-            id="city"
-            value={state.location.city}
-            onChange={(e) =>
-              dispatch({
-                type: "UPDATE_LOCATION",
-                payload: { country: selectedCountry, city: e.target.value },
-              })
-            }
-            className="form-control"
-          >
-            <option value="">Select City</option>
-            {cities.map((city) => (
-              <option key={city} value={city}>
-                {city}
-              </option>
-            ))}
-          </select>
+          {loadingCities ? (
+            <div className="loader">Loading cities...</div> // Show loader
+          ) : (
+            <select
+              id="city"
+              value={state.location.city}
+              onChange={(e) =>
+                dispatch({
+                  type: "UPDATE_LOCATION",
+                  payload: { country: selectedCountry, city: e.target.value },
+                })
+              }
+              className="form-control"
+            >
+              <option value="">Select City</option>
+              {cities.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
+          )}
         </div>
       )}
 
