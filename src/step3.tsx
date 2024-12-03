@@ -2,7 +2,7 @@ import "./formStyles.css";
 
 import * as Yup from "yup";
 
-import FormContext from "./context/formContext";
+import FormContext from "./context/FormContext";
 import { useContext } from "react";
 import { useFormik } from "formik";
 

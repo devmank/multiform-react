@@ -1,4 +1,4 @@
-import { FormProvider } from "./context/formContext";
+import { FormProvider } from "./context/FormContext";
 import ProgressBar from "./progressBar";
 import Step1 from "./step1";
 import Step2 from "./step2";

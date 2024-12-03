@@ -1,4 +1,4 @@
-import FormContext from "./context/formContext";
+import FormContext from "./context/FormContext";
 import { useContext } from "react";
 
 const Summary = ({
