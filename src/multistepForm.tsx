@@ -1,9 +1,9 @@
-import { FormProvider } from "./context/FormContext";
-import ProgressBar from "./progressBar";
-import Step1 from "./step1";
-import Step2 from "./step2";
-import Step3 from "./step3";
-import Summary from "./summary";
+import { FormProvider } from "./context/FormContext.tsx";
+import ProgressBar from "./progressBar.tsx";
+import Step1 from "./step1.tsx";
+import Step2 from "./step2.tsx";
+import Step3 from "./step3.tsx";
+import Summary from "./summary.tsx";
 import { useState } from "react";
 
 const MultiStepForm = () => {

@@ -1,3 +1,5 @@
+// import react from "react";
+
 const ProgressBar = ({ currentStep }: { currentStep: number }) => {
   const totalSteps = 4; // Total number of steps in your form
   const progress = (currentStep / totalSteps) * 100;

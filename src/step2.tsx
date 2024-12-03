@@ -2,7 +2,7 @@ import "./formStyles.css";
 
 import React, { useContext, useEffect, useState } from "react";
 
-import FormContext from "./context/FormContext";
+import FormContext from "./context/FormContext.tsx";
 import axios from "axios";
 
 interface Country {
