@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
-
 import FormContext from "./context/formContext";
+import { useContext } from "react";
 
 const Summary = ({
   goToStep,

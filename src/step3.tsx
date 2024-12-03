@@ -2,9 +2,8 @@ import "./formStyles.css";
 
 import * as Yup from "yup";
 
-import React, { useContext } from "react";
-
 import FormContext from "./context/formContext";
+import { useContext } from "react";
 import { useFormik } from "formik";
 
 const Step3 = ({

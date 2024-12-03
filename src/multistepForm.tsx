@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-
 import { FormProvider } from "./context/formContext";
 import ProgressBar from "./progressBar";
 import Step1 from "./step1";
 import Step2 from "./step2";
 import Step3 from "./step3";
 import Summary from "./summary";
+import { useState } from "react";
 
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
